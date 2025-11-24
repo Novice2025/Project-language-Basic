@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brazilian English Errors - Complete Training Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fef2f2 0%, #ffffff 50%, #eff6ff 100%);
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #dc2626 0%, #2563eb 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .header .magic-solution {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            margin-top: 20px;
+        }
+
+        .search-box {
+            margin-bottom: 30px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.1em;
+            border: 2px solid #3b82f6;
+            border-radius: 15px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: #1d4ed8;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .alert-box {
+            background: #fef3c7;
+            border-left: 4px solid #eab308;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .alert-box h3 {
+            color: #854d0e;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .alert-box p {
+            color: #78350f;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .alert-box ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .alert-box ul li {
+            color: #78350f;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 10px 0;
+            padding-left: 10px;
+        }
+
+        .category {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .category.critical {
+            border-color: #dc2626;
+            background: #fef2f2;
+        }
+
+        .category-header {
+            padding: 25px;
+            background: #dbeafe;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .category.critical .category-header {
+            background: #fee2e2;
+        }
+
+        .category-header:hover {
+            background: #bfdbfe;
+        }
+
+        .category.critical .category-header:hover {
+            background: #fecaca;
+        }
+
+        .category-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .badge {
+            background: #2563eb;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .category.critical .badge {
+            background: #dc2626;
+        }
+
+        .category-content {
+            display: none;
+            padding: 30px;
+        }
+
+        .category-content.active {
+            display: block;
+        }
+
+        .error-item {
+            background: white;
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .error-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .error-label {
+            font-size: 0.75em;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .error-wrong {
+            color: #dc2626;
+        }
+
+        .error-correct {
+            color: #16a34a;
+        }
+
+        .error-why {
+            color: #2563eb;
+        }
+
+        .error-text {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .story-section {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .story-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .story-box {
+            background: rgba(255,255,255,0.2);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+
+        .story-box h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .story-box ul, .story-box ol {
+            margin-left: 20px;
+        }
+
+        .story-box li {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .building-demo {
+            background: linear-gradient(135deg, #9333ea 0%, #ec4899 100%);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .building-demo h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .demo-scenario {
+            background: rgba(255,255,255,0.2);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+
+        .demo-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .demo-step {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            font-size: 1.1em;
+        }
+
+        .demo-wrong {
+            background: rgba(153, 27, 27, 0.5);
+        }
+
+        .demo-process {
+            background: rgba(133, 77, 14, 0.5);
+        }
+
+        .demo-correct {
+            background: rgba(22, 101, 52, 0.5);
+        }
+
+        .action-plan {
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .action-plan h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .plan-box {
+            background: rgba(255,255,255,0.2);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .plan-week {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .plan-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .plan-box ul {
+            list-style: none;
+        }
+
+        .plan-box li {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        .footer {
+            text-align: center;
+            color: #6b7280;
+            margin-top: 60px;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        .chevron {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s;
+        }
+
+        .chevron.rotated {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .header .subtitle {
+                font-size: 1.2em;
+            }
+
+            .error-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .story-grid, .plan-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🇧🇷 → 🇺🇸 BRAZILIAN ENGLISH ERRORS</h1>
+            <p class="subtitle">200+ Critical Mistakes & Instant Fixes</p>
+            <div class="magic-solution">
+                <p style="font-size: 1.3em; font-weight: bold;">
+                    ⚡ THE MAGIC SOLUTION: Learn the PATTERNS, not random grammar
+                </p>
+            </div>
+        </div>
+
+        <!-- Search Box -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 Search errors (type: 'will to', 'you like', 'have years'...)" onkeyup="filterErrors()">
+        </div>
+
+        <!-- Critical Alert -->
+        <div class="alert-box">
+            <h3>🎯 THE REAL PROBLEM</h3>
+            <p>
+                Brazilians translate Portuguese word order into English. 
+                <strong>You must BREAK this habit!</strong> English uses 
+                <strong>auxiliary verbs (do/does/did/is/are/will)</strong> that 
+                Portuguese doesn't. Master these 3 areas first:
+            </p>
+            <ul>
+                <li>✅ 1. QUESTIONS = Always use DO/DOES/DID or invert BE/MODAL</li>
+                <li>✅ 2. NEGATIVES = Always use DON'T/DOESN'T/DIDN'T</li>
+                <li>✅ 3. MODALS = Never add "TO" after (will/can/must/should)</li>
+            </ul>
+        </div>
+
+        <!-- Error Categories -->
+        <div id="categoriesContainer">
+            <!-- Story Telling Category -->
+            <div class="category critical">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <div class="category-title">
+                        📖 STORYTELLING & PAST NARRATIVE
+                        <span class="badge">15 errors</span>
+                    </div>
+                    <svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div class="category-content">
+                    <div class="error-item">
+                        <div class="error-grid">
+                            <div>
+                                <div class="error-label error-wrong">❌ Wrong</div>
+                                <div class="error-text">Last week I was in holiday</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-correct">✓ Correct</div>
+                                <div class="error-text">Last week I was on holiday</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-why">💡 Why</div>
+                                <div class="error-text">ON holiday (not IN)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="error-item">
+                        <div class="error-grid">
+                            <div>
+                                <div class="error-label error-wrong">❌ Wrong</div>
+                                <div class="error-text">We was driving</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-correct">✓ Correct</div>
+                                <div class="error-text">We were driving</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-why">💡 Why</div>
+                                <div class="error-text">WE = WERE (plural)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="error-item">
+                        <div class="error-grid">
+                            <div>
+                                <div class="error-label error-wrong">❌ Wrong</div>
+                                <div class="error-text">There was lots of people</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-correct">✓ Correct</div>
+                                <div class="error-text">There were lots of people</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-why">💡 Why</div>
+                                <div class="error-text">PEOPLE = plural (use WERE)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="error-item">
+                        <div class="error-grid">
+                            <div>
+                                <div class="error-label error-wrong">❌ Wrong</div>
+                                <div class="error-text">A musician play the piano</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-correct">✓ Correct</div>
+                                <div class="error-text">A musician was playing the piano</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-why">💡 Why</div>
+                                <div class="error-text">Past continuous = WAS/WERE + -ing</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="error-item">
+                        <div class="error-grid">
+                            <div>
+                                <div class="error-label error-wrong">❌ Wrong</div>
+                                <div class="error-text">When we go into the restaurant</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-correct">✓ Correct</div>
+                                <div class="error-text">When we went into the restaurant</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-why">💡 Why</div>
+                                <div class="error-text">Past tense throughout story</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Questions Category -->
+            <div class="category critical">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <div class="category-title">
+                        ❌ QUESTION FORMATION (95% fail rate)
+                        <span class="badge">15 errors</span>
+                    </div>
+                    <svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div class="category-content">
+                    <div class="error-item">
+                        <div class="error-grid">
+                            <div>
+                                <div class="error-label error-wrong">❌ Wrong</div>
+                                <div class="error-text">You like pizza?</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-correct">✓ Correct</div>
+                                <div class="error-text">Do you like pizza?</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-why">💡 Why</div>
+                                <div class="error-text">Missing DO auxiliary</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="error-item">
+                        <div class="error-grid">
+                            <div>
+                                <div class="error-label error-wrong">❌ Wrong</div>
+                                <div class="error-text">Where you work?</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-correct">✓ Correct</div>
+                                <div class="error-text">Where do you work?</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-why">💡 Why</div>
+                                <div class="error-text">Missing DO after WH-word</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="error-item">
+                        <div class="error-grid">
+                            <div>
+                                <div class="error-label error-wrong">❌ Wrong</div>
+                                <div class="error-text">Am I have a question?</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-correct">✓ Correct</div>
+                                <div class="error-text">Do I have a question?</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-why">💡 Why</div>
+                                <div class="error-text">Have = verb, not state</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="error-item">
+                        <div class="error-grid">
+                            <div>
+                                <div class="error-label error-wrong">❌ Wrong</div>
+                                <div class="error-text">Did you went?</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-correct">✓ Correct</div>
+                                <div class="error-text">Did you go?</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-why">💡 Why</div>
+                                <div class="error-text">DID + base form</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="error-item">
+                        <div class="error-grid">
+                            <div>
+                                <div class="error-label error-wrong">❌ Wrong</div>
+                                <div class="error-text">When you will go?</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-correct">✓ Correct</div>
+                                <div class="error-text">When will you go?</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-why">💡 Why</div>
+                                <div class="error-text">Invert WILL + subject</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modals Category -->
+            <div class="category critical">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <div class="category-title">
+                        ❌ MODAL VERBS + TO (80% fail)
+                        <span class="badge">10 errors</span>
+                    </div>
+                    <svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div class="category-content">
+                    <div class="error-item">
+                        <div class="error-grid">
+                            <div>
+                                <div class="error-label error-wrong">❌ Wrong</div>
+                                <div class="error-text">I will to stop</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-correct">✓ Correct</div>
+                                <div class="error-text">I will stop</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-why">💡 Why</div>
+                                <div class="error-text">Modal + bare infinitive (NO "to")</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="error-item">
+                        <div class="error-grid">
+                            <div>
+                                <div class="error-label error-wrong">❌ Wrong</div>
+                                <div class="error-text">I can to speak</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-correct">✓ Correct</div>
+                                <div class="error-text">I can speak</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-why">💡 Why</div>
+                                <div class="error-text">CAN + bare infinitive</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="error-item">
+                        <div class="error-grid">
+                            <div>
+                                <div class="error-label error-wrong">❌ Wrong</div>
+                                <div class="error-text">She must to go</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-correct">✓ Correct</div>
+                                <div class="error-text">She must go</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-why">💡 Why</div>
+                                <div class="error-text">MUST + bare infinitive</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="error-item">
+                        <div class="error-grid">
+                            <div>
+                                <div class="error-label error-wrong">❌ Wrong</div>
+                                <div class="error-text">We should to try</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-correct">✓ Correct</div>
+                                <div class="error-text">We should try</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-why">💡 Why</div>
+                                <div class="error-text">SHOULD + bare infinitive</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workplace Scenarios -->
+            <div class="category critical">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <div class="category-title">
+                        🎯 REAL WORKPLACE SCENARIOS
+                        <span class="badge">15 errors</span>
+                    </div>
+                    <svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div class="category-content">
+                    <div class="error-item">
+                        <div class="error-grid">
+                            <div>
+                                <div class="error-label error-wrong">❌ Wrong</div>
+                                <div class="error-text">I have a doubt</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-correct">✓ Correct</div>
+                                <div class="error-text">I have a question</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-why">💡 Why</div>
+                                <div class="error-text">DOUBT ≠ "dúvida" (question)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="error-item">
+                        <div class="error-grid">
+                            <div>
+                                <div class="error-label error-wrong">❌ Wrong</div>
+                                <div class="error-text">You can me help?</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-correct">✓ Correct</div>
+                                <div class="error-text">Can you help me?</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-why">💡 Why</div>
+                                <div class="error-text">Word order: Can + you + verb + object</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="error-item">
+                        <div class="error-grid">
+                            <div>
+                                <div class="error-label error-wrong">❌ Wrong</div>
+                                <div class="error-text">What you think?</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-correct">✓ Correct</div>
+                                <div class="error-text">What do you think?</div>
+                            </div>
+                            <div>
+                                <div class="error-label error-why">💡 Why</div>
+                                <div class="error-text">WH + DO + subject + verb</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Story-Based Learning Section -->
+        <div class="story-section">
+            <h2>📖 LEARNING THROUGH STORYTELLING</h2>
+            <div class="story-box">
+                <h3>Why Stories Work for Brazilian Learners:</h3>
+                <ul>
+                    <li><strong>Context over grammar:</strong> You remember patterns by seeing them in action</li>
+                    <li><strong>Natural flow:</strong> Stories force you to use past tenses correctly</li>
+                    <li><strong>Emotional memory:</strong> You remember "we were driving" better than "past continuous rule"</li>
+                    <li><strong>Multiple patterns:</strong> One story teaches 10+ grammar points simultaneously</li>
+                    <li><strong>Speaking practice:</strong> Retelling stories = real conversation practice</li>
+                </ul>
+            </div>
+            
+            <div class="story-grid">
+                <div class="story-box">
+                    <h3>📝 STORY METHOD: Step-by-Step</h3>
+                    <ol>
+                        <li>Read model story (Scotland restaurant example)</li>
+                        <li>Identify all past tenses (was/were/stopped/looked)</li>
+                        <li>Notice pattern: WAS/WERE + -ing for scene-setting</li>
+                        <li>Find time expressions (last week, one evening, when)</li>
+                        <li>Rewrite story with YOUR experience</li>
+                        <li>Record yourself telling it (audio)</li>
+                        <li>Listen and count errors</li>
+                        <li>Correct and re-record</li>
+                    </ol>
+                </div>
+                
+                <div class="story-box">
+                    <h3>🎯 PRACTICE ASSIGNMENTS</h3>
+                    <ul>
+                        <li><strong>Week 1:</strong> Tell a story about last weekend (5 sentences)</li>
+                        <li><strong>Week 2:</strong> Describe a strange experience (10 sentences)</li>
+                        <li><strong>Week 3:</strong> Explain your last vacation (15 sentences)</li>
+                        <li><strong>Week 4:</strong> Tell a professional story (job interview/meeting)</li>
+                        <li><strong>Assessment:</strong> 3-minute recorded story with less than 5 errors</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
